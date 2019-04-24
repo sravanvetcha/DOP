@@ -1,0 +1,161 @@
+<h1>
+    Angular Charts
+  </h1>
+  <table>
+    <tr>
+        <a [routerLink]="['/historical']" class="btn btn-link">Check Historical Data</a>
+    </tr>
+      <tr>
+        <td>
+          <label for="websocketUrl">Web Socket URL</label>  
+        </td>
+          <td>
+            <input type="text"
+            [(ngModel)]="websocketUrl"
+            name="websocketUrl"
+            id="websocketUrl" class="form-control" placeholder="Web Socket URL" autofocus/>
+            </td>
+            
+      </tr>
+      <tr>
+        <td>
+          <label for="websocketUrl">Y-Axis Step Size Value</label>
+        </td>
+        <td>
+          <input type="text"
+          [(ngModel)]="stepSizeYaxis"
+          name="stepSizeYaxis"
+          id="stepSizeYaxis" class="form-control" placeholder="stepSizeYaxis" autofocus/>
+         </td>
+  
+      </tr>
+      <tr>
+        <td>
+            <label for="websocketUrl">Update Graph and DB After (in seconds)</label>
+        </td>
+        <td>
+          <input type="text"
+          [(ngModel)]="timerInterval"
+          name="timerInterval"
+          id="timerInterval" class="form-control" placeholder="timerInterval" autofocus/>
+        </td>
+      </tr>
+    <tr>
+        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="connect()">Connect</button>          
+    </tr>
+  </table>
+    
+   
+  
+  
+  <div class="container">
+    <h1>Ask level Prices: </h1>
+    <table>
+    <tr>
+      <td>
+          <div class="text-center">
+              <h2 class="text-center">Binance chart BBO </h2>
+              <!-- <canvas #lineChart baseChart width="400" height="400"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              [plugins]="lineChartPlugins"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas> -->
+              <canvas #binancelineChart width="800" height="800">{{ binancechart }}</canvas>
+                </div>
+      </td>
+      <td>
+          <div class="text-center">
+              <h2 class="text-center">BITREX chart BBO </h2>
+              <!-- <canvas #lineChart baseChart width="400" height="400"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              [plugins]="lineChartPlugins"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas> -->
+              <canvas #bitrexlineChart width="800" height="800">{{ bitrexchart }}</canvas>
+            </div>
+      </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="text-center">
+                <h2 class="text-center">E55 chart BBO </h2>
+                <!-- <canvas #lineChart baseChart width="400" height="400"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                [plugins]="lineChartPlugins"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas> -->
+                <canvas #e55lineChart width="800" height="800">{{ e55chart }}</canvas>
+                  </div>
+        </td>
+        <td>
+            <div class="text-center">
+                <h2 class="text-center">HUOBI chart BBO </h2>
+                <!-- <canvas #lineChart baseChart width="400" height="400"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                [plugins]="lineChartPlugins"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas> -->
+                <canvas #huobilineChart width="800" height="800">{{ huobichart }}</canvas>
+                  </div>
+        </td>
+      </tr>
+    </table>
+  
+  
+  
+    <h1>Bid level Prices: </h1>
+    <table>
+    <tr>
+      <td>
+          <div class="text-center">
+              <h2 class="text-center">Binance chart BBO </h2>
+              <canvas #binancelineChart_bid width="800" height="800">{{ binancechart_bid }}</canvas>
+                </div>
+      </td>
+      <td>
+          <div class="text-center">
+              <h2 class="text-center">BITREX chart BBO </h2>
+              <canvas #bitrexlineChart_bid width="800" height="800">{{ bitrexchart_bid }}</canvas>
+                </div>
+      </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="text-center">
+                <h2 class="text-center">E55 chart BBO </h2>
+                <canvas #e55lineChart_bid width="800" height="800">{{ e55chart_bid }}</canvas>
+                  </div>
+        </td>
+        <td>
+            <div class="text-center">
+                <h2 class="text-center">HUOBI chart BBO </h2>
+                <canvas #huobilineChart_bid width="800" height="800">{{ huobichart_bid }}</canvas>
+                  </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  
+  
+  
